@@ -1,0 +1,43 @@
+@model=/template-step
+@id=1
+@templateId=2
+@stepId=3
+### @name get_all
+GET {{host_address}}{{prefix}}{{model}}
+Accept: application/json
+### @name get_by_id
+GET {{host_address}}{{prefix}}{{model}}/{{id}}
+Accept: application/json
+### @name get_by_template
+GET {{host_address}}{{prefix}}{{model}}/template/{{templateId}}
+Accept: application/json
+### @name create
+POST {{host_address}}{{prefix}}{{model}}
+Content-Type: application/json
+{
+  "plantillaId":2,
+  "orden":3,
+  "usuarioAprobadorId":1
+}
+### @name update
+PUT {{host_address}}{{prefix}}{{model}}/{{id}}
+Content-Type: application/json
+{
+  "id":{{id}},
+  "plantillaId":1,
+  "orden":1,
+  "usuarioAprobadorId":1
+}
+### @name patch
+PATCH {{host_address}}{{prefix}}{{model}}/{{templateId}}/{{stepId}}
+Content-Type: application/json
+{
+  "plantillaId":{{templateId}},
+  "orden":{{stepId}},
+  "usuarioAprobadorId":5
+}
+### @name delete
+DELETE {{host_address}}{{prefix}}{{model}}/{{id}}
+### @name open_api
+GET {{host_address}}/openapi/v1.json
+Accept: application/json

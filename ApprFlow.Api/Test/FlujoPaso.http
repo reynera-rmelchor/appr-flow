@@ -1,0 +1,45 @@
+@model=/flow-step
+@id=1
+@flowId=6
+@stepId=2
+### @name get_all
+GET {{host_address}}{{prefix}}{{model}}
+Accept: application/json
+### @name get_by_id
+GET {{host_address}}{{prefix}}{{model}}/{{id}}
+Accept: application/json
+### @name get_by_flow
+GET {{host_address}}{{prefix}}{{model}}/flow/{{flowId}}
+Accept: application/json
+### @name create
+POST {{host_address}}{{prefix}}{{model}}
+Content-Type: application/json
+{
+  "flujoId":2,
+  "orden":2,
+  "usuarioAsignadoId":1
+}
+### @name update
+PUT {{host_address}}{{prefix}}{{model}}/{{id}}
+Content-Type: application/json
+{
+  "id":{{id}},
+  "flujoId":1,
+  "orden":1,
+  "usuarioAsignadoId":1
+}
+### @name patch
+PATCH {{host_address}}{{prefix}}{{model}}/{{flowId}}/{{stepId}}
+Content-Type: application/json
+{
+  "flujoId":{{flowId}},
+  "orden":{{stepId}},
+  "usuarioDecisionId":2,
+  "estado": 3,
+  "observacion": "Paso 2: RECHAZADO"
+}
+### @name delete
+DELETE {{host_address}}{{prefix}}{{model}}/{{id}}
+### @name open_api
+GET {{host_address}}/openapi/v1.json
+Accept: application/json

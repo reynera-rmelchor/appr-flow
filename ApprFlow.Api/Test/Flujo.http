@@ -1,0 +1,38 @@
+@model=/flow
+@id=2
+@status=1
+### @name get_all
+GET {{host_address}}{{prefix}}{{model}}
+Accept: application/json
+### @name get_by_id
+GET {{host_address}}{{prefix}}{{model}}/{{id}}
+Accept: application/json
+### @name get_by_state
+GET {{host_address}}{{prefix}}{{model}}/state/{{status}}
+Accept: application/json
+### @name create
+POST {{host_address}}{{prefix}}{{model}}
+Content-Type: application/json
+{
+  "plantillaId":2,
+  "titulo":"FLUJO DE PRUEBA A PARTIR DE PLANTILLA (2)",
+  "usuarioCreadorId":1
+}
+### @name update
+PUT {{host_address}}{{prefix}}{{model}}/{{id}}
+Content-Type: application/json
+{
+  "id":{{id}},
+  "titulo":"put"
+}
+### @name patch
+PATCH {{host_address}}{{prefix}}{{model}}/{{id}}
+Content-Type: application/json
+{
+  "titulo":"patch"
+}
+### @name delete
+DELETE {{host_address}}{{prefix}}{{model}}/{{id}}
+### @name open_api
+GET {{host_address}}/openapi/v1.json
+Accept: application/json

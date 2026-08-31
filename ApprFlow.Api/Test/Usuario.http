@@ -1,0 +1,42 @@
+@model=/user
+@id=15
+@role=1
+### @name get_all
+GET {{host_address}}{{prefix}}{{model}}
+Accept: application/json
+### @name get_by_id
+GET {{host_address}}{{prefix}}{{model}}/{{id}}
+Accept: application/json
+### @name get_by_role
+GET {{host_address}}{{prefix}}{{model}}/role/{{role}}
+Accept: application/json
+### @name create
+POST {{host_address}}{{prefix}}{{model}}
+Content-Type: application/json
+{
+  "nombre":"jorge perez",
+  "email":"jorge.perez@ejemplo.com"
+}
+### @name update
+PUT {{host_address}}{{prefix}}{{model}}/{{id}}
+Content-Type: application/json
+{
+  "id":{{id}},
+  "nombre":"put",
+  "email":"put@ejemplo.com"
+}
+### @name patch
+PATCH {{host_address}}{{prefix}}{{model}}/{{id}}
+Content-Type: application/json
+{
+  "nombre":"patch",
+  "activo":true
+}
+### @name delete
+DELETE {{host_address}}{{prefix}}{{model}}/{{id}}
+### @name open_api
+GET {{host_address}}/openapi/v1.json
+Accept: application/json
+### @name swagger_ui
+GET {{host_address}}/swagger
+Accept: application/json
