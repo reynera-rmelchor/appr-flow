@@ -1,7 +1,8 @@
 # flujos-aprobacion
 Sistema (test) de flujos de aprobación, utilizando minimal APIs
 
-**Descripción:** Sistema de flujos de aprobación  
+**Descripción:** Sistema de flujos de aprobación
+
 **Características:**
 - Los flujos se deben crear a partir de **Plantillas**
 - Cada paso dentro de un flujo, tiene un autorizador _pre-asignado_
